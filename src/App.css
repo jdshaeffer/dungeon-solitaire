@@ -17,3 +17,23 @@ button {
   font-size: 18px;
   margin: 10px;
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+}
+
+.card {
+  margin: 1rem;
+  border: 2px solid #eaeaea;
+  border-radius: 5px;
+  min-width: 70px;
+  min-height: 100px;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  border-color: cyan;
+  cursor: pointer;
+}
