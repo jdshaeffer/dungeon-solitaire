@@ -23,6 +23,11 @@ button {
   grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
 }
 
+.entrance-cards {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
 .card {
   margin: 1rem;
   border: 2px solid #eaeaea;
@@ -36,4 +41,17 @@ button {
 .card:active {
   border-color: cyan;
   cursor: pointer;
+}
+
+.stats-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  /* position: absolute;
+  margin-bottom: 600px; */
+}
+
+.stat {
+  margin-left: 10px;
+  margin-right: 10px;
 }
