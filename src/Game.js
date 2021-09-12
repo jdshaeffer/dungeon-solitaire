@@ -143,7 +143,7 @@ const Game = ({ difficulty }) => {
 		goldAfterEnemy = false
 		healthAfterEnemy = false
 
-		let cardToChange = entranceCards ? entranceCards[entranceCards.indexOf(currentCard)] : cards[cards.indexOf(currentCard)]
+		let cardToChange = entranceCards.length ? entranceCards[entranceCards.indexOf(currentCard)] : cards[cards.indexOf(currentCard)]
 		cardToChange.visibility = 'hidden'
 		cards[cards.indexOf(currentCard)] = cardToChange
 
@@ -213,12 +213,12 @@ const Game = ({ difficulty }) => {
 						}
 					}
 
-					if (enemyHealth < 2) {
+					if (enemyHealth < 1) {
 						setCurrentCard(null)
 					}
 				}
 
-				if (currentCard.display && enemyHealth < 2 && health !== 0) {
+				if (currentCard.display && enemyHealth < 1 && health !== 0) {
 					// handle entrance card disappearing after 1.5 seconds
 					await sleep()
 					setCommentary(`entering the dungeon...`)
