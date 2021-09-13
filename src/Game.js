@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import Store from './Store'
 
 let enter
 let pause
@@ -41,6 +42,7 @@ const Game = ({ difficulty }) => {
 	const [currentCard, setCurrentCard] = useState(null)
 	const [commentary, setCommentary] = useState('roll for initial health')
 	const [enemyHealth, setEnemyHealth] = useState(0)
+	const [storeOpen, setStoreOpen] = useState(false)
 	const [cards, setCards] = useState(shuffle([
 		{ pow: 2, value: '2', suit: 'spades', clicked: false, visibility: 'visible' },
 		{ pow: 3, value: '3', suit: 'spades', clicked: false, visibility: 'visible' },
@@ -253,9 +255,22 @@ const Game = ({ difficulty }) => {
 		setCounter(counter + 1)
 	}
 
-	useEffect(() => {
-		// console.log(counter)
-	}, [counter])
+	const handleStoreOpen = () => {
+		setStoreOpen(true)
+	}
+
+	const handleStoreClose = () => {
+		setStoreOpen(false)
+	}
+
+	const storeFunction = (type, amount, price) => {
+		if (type === 'attack') {
+			setAttack(attack + amount)
+		} else if (type === 'health') {
+			setHealth(health + amount)
+		}
+		setGold(gold - price)
+	}
 
 	return (
 		<>
@@ -303,6 +318,9 @@ const Game = ({ difficulty }) => {
 			<div>
 				<button onClick={roll} style={{display: counter === 0 ? 'block' : (health > 0 ? 'block' : 'none')}}>roll</button>
 			</div>
+			<button onClick={handleStoreOpen} style={{position: 'absolute', left: 80, bottom: 10}}>store</button>
+			<button onClick={handleStoreOpen} style={{position: 'absolute', left: 10, bottom: 10}}>help</button>
+			<Store open={storeOpen} onClose={handleStoreClose} storeFunction={storeFunction} gold={gold} />
 		</>
 	)
 }
