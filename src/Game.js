@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 let enter
 let pause
 let goldAfterEnemy
 let healthAfterEnemy
+let cardCounter = 0
 // the fisher-yates shuffle algorithm
 const shuffle = arr => {
 	let currentIndex = arr.length, randomIndex
@@ -99,20 +100,31 @@ const Game = ({ difficulty }) => {
 	const onCardClick = card => {
 		// flip over card
 		if (!card.clicked && !currentCard) {
-			let copyOfCards = [...cards]
-			let cardToChange = cards[cards.indexOf(card)]
-			cardToChange.clicked = true
-			cards[cards.indexOf(card)] = cardToChange
-			setCards(copyOfCards)
-			setCurrentCard(card)
+			// border check
+			const i = cards.indexOf(card)
+			if (((cards[i + 1] && cards[i + 1].visibility === 'hidden') ||
+			(cards[i - 1] && cards[i - 1].visibility === 'hidden') ||
+			(cards[i + 10] && cards[i + 10].visibility === 'hidden') ||
+			(cards[Math.abs(i - 10)] && cards[Math.abs(i - 10)].visibility === 'hidden')) ||
+			cardCounter === 0) {
+				let copyOfCards = [...cards]
+				let cardToChange = cards[cards.indexOf(card)]
+				cardToChange.clicked = true
+				cards[cards.indexOf(card)] = cardToChange
+				setCards(copyOfCards)
+				setCurrentCard(card)
 
-			// set up enemy health at card flip
-			if (card.suit === 'spades' || card.suit === 'clubs') {
-				setEnemyHealth(card.pow)
+				// set up enemy health at card flip
+				if (card.suit === 'spades' || card.suit === 'clubs') {
+					setEnemyHealth(card.pow)
+				}
+
+				const action = card.suit === 'hearts' ? 'for health' : (card.suit === 'diamonds' ? 'for gold' : 'to attack')
+				setCommentary(`the ${card.value} of ${card.suit}. roll ${action}.`)
+				cardCounter++
+			} else {
+				console.log(`can't pick that one`)
 			}
-
-			const action = card.suit === 'hearts' ? 'for health' : (card.suit === 'diamonds' ? 'for gold' : 'to attack')
-			setCommentary(`the ${card.value} of ${card.suit}. roll ${action}.`)
 		}
 	}
 
@@ -183,7 +195,7 @@ const Game = ({ difficulty }) => {
 						const damage = rand(attack)
 						setEnemyHealth(enemyHealth - damage < 0 ? 0 : enemyHealth - damage)
 
-						if (enemyHealth - damage < 1) {
+						if (enemyHealth - damage < 1 || !enemyHealth) {
 							// when enemy dies
 							setCommentary(`you dealt ${damage} damage.
 								you defeated the ${currentCard.value} of ${currentCard.suit}.
@@ -227,7 +239,7 @@ const Game = ({ difficulty }) => {
 					setCommentary(`select any card to begin`)
 				} else {
 					// handle normal dissappearing of cards
-					if (enemyHealth < 2) {
+					if (enemyHealth < 1) {
 						let copyOfCards = [...cards]
 						let cardToChange = cards[cards.indexOf(currentCard)]
 						cardToChange.visibility = 'hidden'
@@ -240,6 +252,10 @@ const Game = ({ difficulty }) => {
 
 		setCounter(counter + 1)
 	}
+
+	useEffect(() => {
+		// console.log(counter)
+	}, [counter])
 
 	return (
 		<>
