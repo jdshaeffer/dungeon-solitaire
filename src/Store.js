@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Dialog, DialogTitle, List, ListItem, ListItemText } from '@material-ui/core'
+import { Dialog, DialogContent, DialogTitle, Typography } from '@material-ui/core'
 import './App.css'
 
-const Store = ({ onClose, open, storeFunction, gold }) => {
+const Store = ({ onClose, onOpen, storeFunction, gold }) => {
 	const [response, setResponse] = useState()
 
 	const handleClose = () => {
@@ -36,26 +36,28 @@ const Store = ({ onClose, open, storeFunction, gold }) => {
 	}
 
 	return (
-		<Dialog onClose={handleClose} open={open}>
+		<Dialog onClose={handleClose} open={onOpen}>
 			<div style={{color: 'white', backgroundColor: '#121E24', border: '2px solid white'}}>
 				<DialogTitle>store</DialogTitle>
-				<List>
-					<ListItem>
-						<ListItemText primary='buy more attack power' />
+				<DialogContent>
+					<Typography gutterBottom>
+						buy more attack power
 						<button onClick={() => handleStore(1)}>+1 (5 gold)</button>
 						<button onClick={() => handleStore(2)}>+3 (10 gold)</button>
-					</ListItem>
-					<ListItem>
-						<ListItemText primary='buy more health' />
+					</Typography>
+					<Typography gutterBottom>
+						buy more health
 						<button onClick={() => handleStore(3)}>+10 (5 gold)</button>
-					</ListItem>
-				{ response === 'success' ?
-				<small style={{marginLeft: '16px', color: 'lightgreen'}}>success!</small>
-				: response === 'notEnough' ?
-				<small style={{marginLeft: '16px', color: 'red'}}>not enough gold</small>
-				: <small style={{visibility: 'hidden'}}>-</small>
-				}
-				</List>
+					</Typography>
+					<Typography gutterBottom>
+						{ response === 'success' ?
+						<small style={{color: 'lightgreen'}}>success!</small>
+						: response === 'notEnough' ?
+						<small style={{color: 'red'}}>not enough gold</small>
+						: <small style={{visibility: 'hidden'}}>-</small>
+						}
+					</Typography>
+				</DialogContent>
 			</div>
 		</Dialog>
 	)
