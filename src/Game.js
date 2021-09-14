@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Store from './Store'
 import Tutorial from './Tutorial'
 
@@ -100,6 +100,7 @@ const Game = ({ difficulty }) => {
 		{ pow: 14, value: 'ace', suit: 'diamonds', clicked: false, visibility: 'visible' },
 	]))
 	const [entranceCards, setEntranceCards] = useState(enter)
+	const [win, setWin] = useState(false)
 
 	const onCardClick = card => {
 		// flip over card
@@ -282,9 +283,16 @@ const Game = ({ difficulty }) => {
 		setTutorialOpen(false)
 	}
 
+	useEffect(() => {
+		if (cards.every(card => card.visibility === 'hidden')) {
+			setWin(true)
+		}
+	}, [cards])
+
 	return (
 		<>
-			{ !entranceCards.length ?
+			<h1 style={{display: win ? 'block' : 'none'}}>bravo, you did it!</h1>
+			{ !entranceCards.length && !win ?
 				<div className='cards'>
 					{
 						cards.map((card, i) => {
@@ -323,12 +331,12 @@ const Game = ({ difficulty }) => {
 				}
 			</div>
 			<div>
-				<small>{ commentary }</small>
+				<small>{ win ? 'refresh to play again, or try a different difficulty. thanks for playing!' : commentary }</small>
 			</div>
 			<div>
-				<button onClick={roll} style={{display: counter === 0 ? 'block' : (health > 0 ? 'block' : 'none')}}>roll</button>
+				<button onClick={roll} style={{display: counter === 0 ? 'block' : (health > 0 && !win ? 'block' : 'none')}}>roll</button>
 			</div>
-			<button onClick={handleStoreOpen} style={{position: 'absolute', left: 80, bottom: 10}}>store</button>
+			<button onClick={handleStoreOpen} style={{position: 'absolute', left: 80, bottom: 10, display: win ? 'none' : 'block '}}>store</button>
 			<button onClick={handleTutorialOpen} style={{position: 'absolute', left: 10, bottom: 10}}>help</button>
 			<Store onOpen={storeOpen} onClose={handleStoreClose} storeFunction={storeFunction} gold={gold} />
 			<Tutorial onOpen={tutorialOpen} onClose={handleTutorialClose} />

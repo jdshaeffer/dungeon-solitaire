@@ -22,11 +22,13 @@ const Tutorial = ({ onOpen, onClose }) => {
 						dungeon - you select the one you want and the other is discarded.
 					</Typography>
 					<Typography gutterBottom>
-						you then flip over each card and interact with it to clear it.
-						hearts give you more health and diamonds give you more gold. you
-						roll to determine how much health or gold you get depending on the
-						card's value. for example, if you encountered the 5 of hearts, you
-						will receive an increase in health - randomly selected from 1 to 5.
+						you then flip over each card and interact with it to clear it. you
+						can only select those that are adjacent to an empty space except for
+						the first card. hearts give you more health and diamonds give you
+						more gold. you roll to determine how much health or gold you get
+						depending on the card's value. for example, if you encountered the 5
+						of hearts, you will receive an increase in health - randomly
+						selected from 1 to 5.
 					</Typography>
 					<Typography gutterBottom>
 						spades and clubs are the enemies of the dungeon. the health of an
