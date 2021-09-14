@@ -338,7 +338,7 @@ const Game = ({ difficulty }) => {
 			</div>
 			<button onClick={handleStoreOpen} style={{position: 'absolute', left: 80, bottom: 10, display: win ? 'none' : 'block '}}>store</button>
 			<button onClick={handleTutorialOpen} style={{position: 'absolute', left: 10, bottom: 10}}>help</button>
-			<Store onOpen={storeOpen} onClose={handleStoreClose} storeFunction={storeFunction} gold={gold} />
+			<Store onOpen={storeOpen} onClose={handleStoreClose} storeFunction={storeFunction} gold={gold} difficulty={difficulty} />
 			<Tutorial onOpen={tutorialOpen} onClose={handleTutorialClose} />
 		</>
 	)
