@@ -46,7 +46,8 @@ const Tutorial = ({ onOpen, onClose }) => {
 						the shop.
 					</Typography>
 					<Typography gutterBottom>
-						any questions or concerns, contact me at shaefferjd at gmail dot com.
+						any questions or concerns, contact me at shaefferjd at gmail dot
+						com. the code for this project lives on <a href='https://github.com/jdshaeffer/dungeon-solitaire'>github</a>.
 					</Typography>
 				</DialogContent>
 			</div>
