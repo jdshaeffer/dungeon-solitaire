@@ -71,7 +71,7 @@ const Game = ({ difficulty }) => {
 		{ pow: 11, value: 'jack', suit: 'clubs', clicked: false, visibility: 'visible' },
 		{ pow: 12, value: 'queen', suit: 'clubs', clicked: false, visibility: 'visible' },
 		{ pow: 13, value: 'king', suit: 'clubs', clicked: false, visibility: 'visible' },
-		{ pow: 14, value: 'ace', suit: 'hearts', clicked: false, visibility: 'visible' },
+		{ pow: 14, value: 'ace', suit: 'clubs', clicked: false, visibility: 'visible' },
 		{ pow: 2, value: '2', suit: 'hearts', clicked: false, visibility: 'visible' },
 		{ pow: 3, value: '3', suit: 'hearts', clicked: false, visibility: 'visible' },
 		{ pow: 4, value: '4', suit: 'hearts', clicked: false, visibility: 'visible' },
