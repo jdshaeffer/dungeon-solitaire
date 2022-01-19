@@ -1,4 +1,9 @@
-how to play
+# dungeon solitaire
+
+### https://dungeon-solitaire.vercel.app
+
+## how to play
+
 clear the dungeon of all its monsters and treasures!
 
 begin by receiving an initial health value, randomly selected from 1-20, and an inital attack power value, randomly selected from 1-8. the game is played out of a 52 standard card deck, shuffled up and laid face-down in a 5*10 grid. the last 2 cards are presented to you face-up at the beginning of the game as a "soft" entrance into the dungeon - you select the one you want and the other is discarded.
