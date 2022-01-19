@@ -285,9 +285,11 @@ const Game = ({ difficulty }) => {
 
 	useEffect(() => {
 		if (cards.every(card => card.visibility === 'hidden')) {
-			setWin(true)
+			if (health > 0) {
+				setWin(true)
+			}
 		}
-	}, [cards])
+	}, [health, cards])
 
 	return (
 		<>
