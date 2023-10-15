@@ -1,7 +1,7 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Game from './Game'
-import Intro from './Intro'
-import './App.css'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Game from './Game';
+import Intro from './Intro';
+import './App.css';
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
         </Router>
       </header>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

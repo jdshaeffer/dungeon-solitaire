@@ -6,7 +6,7 @@
 
 clear the dungeon of all its monsters and treasures!
 
-begin by receiving an initial health value, randomly selected from 1-20, and an initial attack power value, randomly selected from 1-8. the game is played out of a 52 standard card deck, shuffled up and laid face-down in a 5*10 grid. the last 2 cards are presented to you face-up at the beginning of the game as a "soft" entrance into the dungeon - you select the one you want and the other is discarded.
+begin by receiving an initial health value, randomly selected from 1-20, and an initial attack power value, randomly selected from 1-8. the game is played out of a 52 standard card deck, shuffled up and laid face-down in a 5\*10 grid. the last 2 cards are presented to you face-up at the beginning of the game as a "soft" entrance into the dungeon - you select the one you want and the other is discarded.
 
 you then flip over each card and interact with it to clear it. you can only select those that are adjacent to an empty space except for the first card. hearts give you more health and diamonds give you more gold. you roll to determine how much health or gold you get depending on the card's value. for example, if you encountered the 5 of hearts, you will receive an increase in health - randomly selected from 1 to 5.
 
