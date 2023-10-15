@@ -12,10 +12,10 @@ const App = () => {
             <Route exact path='/dungeon-solitaire'>
               <Intro />
             </Route>
-            <Route path='/easy'>
+            <Route exact path='/dungeon-solitaire/easy'>
               <Game difficulty='easy' />
             </Route>
-            <Route path='/hard'>
+            <Route exact path='/dungeon-solitaire/hard'>
               <Game difficulty='hard' />
             </Route>
           </Switch>
