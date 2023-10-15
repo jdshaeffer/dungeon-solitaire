@@ -1,22 +1,20 @@
 {
   "files": {
     "main.css": "/dungeon-solitaire/static/css/main.68c77a24.chunk.css",
-    "main.js": "/dungeon-solitaire/static/js/main.9584b9b0.chunk.js",
-    "main.js.map": "/dungeon-solitaire/static/js/main.9584b9b0.chunk.js.map",
-    "runtime-main.js": "/dungeon-solitaire/static/js/runtime-main.b05e2006.js",
-    "runtime-main.js.map": "/dungeon-solitaire/static/js/runtime-main.b05e2006.js.map",
-    "static/js/2.9b961458.chunk.js": "/dungeon-solitaire/static/js/2.9b961458.chunk.js",
-    "static/js/2.9b961458.chunk.js.map": "/dungeon-solitaire/static/js/2.9b961458.chunk.js.map",
-    "static/js/3.5d6218b3.chunk.js": "/dungeon-solitaire/static/js/3.5d6218b3.chunk.js",
-    "static/js/3.5d6218b3.chunk.js.map": "/dungeon-solitaire/static/js/3.5d6218b3.chunk.js.map",
+    "main.js": "/dungeon-solitaire/static/js/main.ac38ef17.chunk.js",
+    "main.js.map": "/dungeon-solitaire/static/js/main.ac38ef17.chunk.js.map",
+    "runtime-main.js": "/dungeon-solitaire/static/js/runtime-main.bff351de.js",
+    "runtime-main.js.map": "/dungeon-solitaire/static/js/runtime-main.bff351de.js.map",
+    "static/js/2.372825be.chunk.js": "/dungeon-solitaire/static/js/2.372825be.chunk.js",
+    "static/js/2.372825be.chunk.js.map": "/dungeon-solitaire/static/js/2.372825be.chunk.js.map",
     "index.html": "/dungeon-solitaire/index.html",
     "static/css/main.68c77a24.chunk.css.map": "/dungeon-solitaire/static/css/main.68c77a24.chunk.css.map",
-    "static/js/2.9b961458.chunk.js.LICENSE.txt": "/dungeon-solitaire/static/js/2.9b961458.chunk.js.LICENSE.txt"
+    "static/js/2.372825be.chunk.js.LICENSE.txt": "/dungeon-solitaire/static/js/2.372825be.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.b05e2006.js",
-    "static/js/2.9b961458.chunk.js",
+    "static/js/runtime-main.bff351de.js",
+    "static/js/2.372825be.chunk.js",
     "static/css/main.68c77a24.chunk.css",
-    "static/js/main.9584b9b0.chunk.js"
+    "static/js/main.ac38ef17.chunk.js"
   ]
 }
