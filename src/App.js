@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Game from './Game';
 import Intro from './Intro';
 import './App.css';
@@ -7,19 +7,11 @@ const App = () => {
   return (
     <div className='App'>
       <header className='App-header'>
-        <Router>
-          <Switch>
-            <Route exact path='/dungeon-solitaire'>
-              <Intro />
-            </Route>
-            <Route exact path='/dungeon-solitaire/easy'>
-              <Game difficulty='easy' />
-            </Route>
-            <Route exact path='/dungeon-solitaire/hard'>
-              <Game difficulty='hard' />
-            </Route>
-          </Switch>
-        </Router>
+        <Routes>
+          <Route exact path='/' element={<Intro />} />
+          <Route exact path='/easy' element={<Game difficulty='easy' />} />
+          <Route exact path='/hard' element={<Game difficulty='hard' />} />
+        </Routes>
       </header>
     </div>
   );
