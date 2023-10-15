@@ -9,7 +9,7 @@ const App = () => {
       <header className='App-header'>
         <Router>
           <Switch>
-            <Route exact path='/'>
+            <Route exact path='/dungeon-solitaire'>
               <Intro />
             </Route>
             <Route path='/easy'>
