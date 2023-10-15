@@ -1,6 +1,6 @@
 # dungeon solitaire
 
-### https://dungeon-solitaire.vercel.app
+### a sorta fun quick single-player card game: https://jdshaeffer.github.io/dungeon-solitaire/
 
 ## how to play
 
